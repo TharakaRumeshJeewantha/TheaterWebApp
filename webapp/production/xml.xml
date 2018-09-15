@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <detail>
+    <topic>Pirates of the Caribbean</topic>
+    <release>May 24, 2017 (Italy)</release>
+    <directors>Joachim Ranning, Espen Sandberg</directors>
+	<budget>230 Million (USD)</budget>
+	<producer>Jerry Bruckheimer</producer>
+	<actors>Johnny Depp, Orlando Bloom, Keira Knightley, Penelope Cruz</actors>
+	<summary>Capt. Jack Sparrow (Johnny Depp) arrives at Port Royal in the Caribbean without a ship or crew. His timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter, Elizabeth (Keira Knightley), who's in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead. A gallant blacksmith (Orlando Bloom) in love with Elizabeth allies with Sparrow in pursuit of the pirates.</summary>
+  </detail>
+  <detail>
+    <budget>69 Million (USD)</budget>
+    <directors>Seth Gordon</directors>
+    <release>May 10, 2017 (Philippines)</release>
+    <topic>Baywatch</topic>
+	<producer>Dwayne Johnson, Ivan Reitman, Beau Flynn</producer>
+	<actors>Pamela Anderson, David Hasselhoff</actors>
+	<summary>Matt Brody is a former Olympic swimmer who wants to join an elite team of lifeguards led by the hulking Mitch Buchannon. Brody thinks he's a shoo-in, but his casual attitude starts to instantly rub Mitch the wrong way. When drugs and a shady resort owner pose a threat to the bay, Mitch and Matt must put their differences aside to spring into action and save the day.
+</summary>
+  </detail>
+  <detail>
+    <budget>480 Million (INR)</budget>
+    <directors>Mohit Suri</directors>
+    <release>May 19, 2017 (India)</release>
+    <topic>Half Girlfriend</topic>
+	<producer>Ekta Kapoor, Shobha Kapoor</producer>
+	<actors>Shraddha Kapoor, Arjun Kapoor</actors>
+	<summary>Riya suggests a compromise to Madhav when she agrees to be his "half girlfriend."
+</summary>
+  </detail>
+  <detail>
+    <budget>2.5 Billion (INR)</budget>
+    <directors>S.S.Rajamouli</directors>
+    <release>April 27, 2017 (USA)</release>
+    <topic>Baahubali 2 : The Conclusion</topic>
+	<producer>Shobu Yarlagadda, Kovelamudi Raghavendra Rao, Prasad Devineni</producer>
+	<actors>Prabhas, Anushka Shetty, Rana Daggubati, Tamannah</actors>
+	<summary>Shiva, the son of Bahubali, begins to search for answers after he learns about his heritage.
+</summary>
+  </detail>
+  <detail>
+    <budget>97 Million (USD)</budget>
+    <directors>Ridley Scott</directors>
+    <release>May 11, 2017 (Brazil)</release>
+    <topic>Alien : Covenant</topic>
+	<producer>Ridley Scott, Walter Hill, David Giler, Michael Schaefer, Mark Huffam</producer>
+	<actors>Michael Fassbender, Katherine Waterston</actors>
+	<summary>Bound for a remote planet on the far side of the galaxy, members (Katherine Waterston, Billy Crudup) of the colony ship Covenant discover what they think to be an uncharted paradise. While there, they meet David (Michael Fassbender), the synthetic survivor of the doomed Prometheus expedition. The mysterious world soon turns dark and dangerous when a hostile alien life-form forces the crew into a deadly fight for survival.
+</summary>
+  </detail>
+  </dataset>

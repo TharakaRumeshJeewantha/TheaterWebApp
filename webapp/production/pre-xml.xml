@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <detail>
+    <topic>Glendee Coconut Chips 40g</topic>
+    <price>Rs.275.00</price>
+    <special>Rs. 250.00</special>
+	<brand>Glendee</brand>
+  </detail>
+  <detail>
+    <price>Rs.420.00</price>
+    <special>Rs. 347.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles Cheese 110g</topic>
+  </detail>
+  <detail>
+    <price>Rs.185.00</price>
+    <special>Rs. 153.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles Sour Cream and Onion</topic>
+  </detail>
+  <detail>
+    <price>Rs.189.00</price>
+    <special>Rs. 156.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles Potato Chips Original</topic>
+  </detail>
+  <detail>
+    <price>Rs.426.00</price>
+    <special>Rs. 352.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles BBQ 110g</topic>
+  </detail>
+  <detail>
+    <price>Rs.442.00</price>
+    <special>Rs. 366.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles Pizza 110g</topic>
+  </detail>
+  <detail>
+    <price>Rs.438.00</price>
+    <special>Rs. 362.00</special>
+	<brand>Pringles</brand>
+    <topic>Pringles Hot and Spicy 110g</topic>
+  </detail>
+  </dataset>

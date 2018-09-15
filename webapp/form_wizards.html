@@ -1,0 +1,938 @@
+
+ <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.min.css" rel="stylesheet">
+
+<style>
+.i1 {
+	position: absolute;
+	top: 70px;
+	left: 670px;
+}
+.i2 {
+	position: absolute;
+	top: 390px;
+	left: 670px;
+}
+.i3 {
+	position: absolute;
+	top: 710px;
+	left: 670px;
+}
+.i4 {
+	position: absolute;
+	top: 1034px;
+	left: 670px;
+}
+.i5 {
+	position: absolute;
+	top: 1360px;
+	left: 670px;
+}
+
+</style>
+
+<script type="text/javascript">
+	function calculate_seat_price() {
+			var a = document.getElementById("seat");
+			if(a.value=="1") {
+				document.getElementById("one_seat").value= 1000;
+			}
+			else if (a.value=="2") {
+				document.getElementById("one_seat").value= 750;
+			}
+			else if (a.value=="3") {
+				document.getElementById("one_seat").value= 500;
+			}
+		
+	}
+
+	function total_seat_amounts() {
+		var aa1 = document.getElementById('one_seat').value;
+       	var aa2 = document.getElementById('number1').value;
+       		if (aa1 == "")
+           			aa1 = 0;
+       		if (aa2 == "")
+           			aa2 = 0;
+
+       var multiply = parseInt(aa1) * parseInt(aa2);
+       if (!isNaN(multiply)) {
+           document.getElementById('total_seat_amount').value = multiply;
+       }
+	}
+
+	function calculate_snack_price() {
+			var sn = document.getElementById("snackers");
+			if(sn.value=="a") {
+				document.getElementById("price_snack").value= 250;
+			}
+			else if (sn.value=="b") {
+				document.getElementById("price_snack").value= 347;
+			}
+			else if (sn.value=="c") {
+				document.getElementById("price_snack").value= 153;
+			}
+			else if(sn.value=="d") {
+				document.getElementById("price_snack").value= 156;
+			}
+			else if (sn.value=="e") {
+				document.getElementById("price_snack").value= 352;
+			}
+			else if (sn.value=="f") {
+				document.getElementById("price_snack").value= 366;
+			}
+			else if (sn.value=="g") {
+				document.getElementById("price_snack").value= 362;
+			}
+	}
+
+		function total_snack_amounts() {
+		var bb1 = document.getElementById('price_snack').value;
+       	var bb2 = document.getElementById('number2').value;
+       		if (bb1 == "")
+           			bb1 = 0;
+       		if (bb2 == "")
+           			bb2 = 0;
+
+       var multiplys = parseInt(bb1) * parseInt(bb2);
+       if (!isNaN(multiplys)) {
+           document.getElementById('total_snack_price').value = multiplys;
+       }
+	}
+
+	function t_amounts() {
+		var cc1 = document.getElementById('total_seat_amount').value;
+		document.getElementById('t_amount').value = cc1;
+	}
+
+	function p_amounts() {
+		var dd1 = document.getElementById('total_snack_price').value;
+		if (dd1 == "")
+           			dd1 = 0;
+		document.getElementById('p_amount').value = dd1;
+	}
+
+function total_price() {
+		var ee1 = document.getElementById('p_amount').value;
+       	var ee2 = document.getElementById('t_amount').value;
+       		if (ee1 == "")
+           			ee1 = 0;
+       		if (ee2 == "")
+           			ee2 = 0;
+
+       var tot = parseInt(ee1) + parseInt(ee2);
+       if (!isNaN(tot)) {
+           document.getElementById('total_amount').value = tot;
+       }
+	}
+
+		function tt_amounts() {
+		var ff1 = document.getElementById('total_seat_amount').value;
+		document.getElementById('tt_amount').value = ff1;
+	}
+
+	function pp_amounts() {
+		var gg1 = document.getElementById('total_snack_price').value;
+		if (gg1 == "") 
+           			gg1 = 0;
+		document.getElementById('pp_amount').value = gg1;
+	}
+
+function totals_price() {
+		var hh1 = document.getElementById('pp_amount').value;
+       	var hh2 = document.getElementById('tt_amount').value;
+       		if (hh1 == "")
+           			hh1 = 0;
+       		if (hh2 == "")
+           			hh2 = 0;
+
+       var tots = parseInt(hh1) + parseInt(hh2);
+       if (!isNaN(tots)) {
+           document.getElementById('totals').value = tots;
+       }
+	}
+
+	function Reset_credit() {
+		document.getElementById('h_name').value = "";
+		document.getElementById('c_no').value = "";
+		document.getElementById('cvc_no').value = "";
+		document.getElementById('t_amount').value = "";
+		document.getElementById('p_amount').value = "";
+		document.getElementById('total_amount').value = "";
+	}
+
+	function Reset_mbill() {
+		document.getElementById('c_name').value = "";
+		document.getElementById('m_no').value = "";
+		document.getElementById('p_no').value = "";
+		document.getElementById('tt_amount').value = "";
+		document.getElementById('pp_amount').value = "";
+		document.getElementById('totals').value = "";
+	}
+
+  function ane() {
+      var pp1 = document.getElementById('one_seat').value;
+    document.getElementById('bill1').value = pp1;
+
+     var pp2 = document.getElementById('number1').value;
+    document.getElementById('bill2').value = pp2;
+
+     var pp3 = document.getElementById('total_seat_amount').value;
+    document.getElementById('bill3').value = pp3;
+
+     var pp4 = document.getElementById('price_snack').value;
+    document.getElementById('bill4').value = pp4;
+
+     var pp5 = document.getElementById('number2').value;
+    document.getElementById('bill5').value = pp5;
+
+     var pp6 = document.getElementById('total_snack_price').value;
+    document.getElementById('bill6').value = pp6;
+
+          if (pp3 == "")
+                pp3 = 0;
+          if (pp6 == "")
+                pp6 = 0;
+
+       var tot = parseInt(pp3) + parseInt(pp6);
+       if (!isNaN(tot)) {
+           document.getElementById('bill7').value = tot;
+       }
+
+var sn = document.getElementById("Tname");
+      if(sn.value=="a01") {
+        document.getElementById("nbill1").value= "Liberty Cinemas";
+      }
+      else if (sn.value=="a02") {
+        document.getElementById("nbill1").value= "Savoy Cinema";
+      }
+      else if (sn.value=="a03") {
+        document.getElementById("nbill1").value= "Lionel Wendt art gallery";
+      }
+      else if(sn.value=="a04") {
+        document.getElementById("nbill1").value= "Elphinstone Theatre";
+      }
+      else if (sn.value=="a05") {
+        document.getElementById("nbill1").value= "Majestic Cinema";
+      }
+      else if (sn.value=="a06") {
+        document.getElementById("nbill1").value= "Regal Cinema";
+      }
+
+      var rn = document.getElementById("Mname");
+      if(rn.value=="b01") {
+        document.getElementById("na1").value= "Pirates of the Caribbean";
+      }
+      else if (rn.value=="b02") {
+        document.getElementById("na1").value= "Baywatch";
+      }
+      else if (rn.value=="b03") {
+        document.getElementById("na1").value= "Half Girlfriend";
+      }
+      else if(rn.value=="b04") {
+        document.getElementById("na1").value= "Baahubali 2 : The Conclusion";
+      }
+      else if (rn.value=="b05") {
+        document.getElementById("na1").value= "Alien : Covenant";
+      }
+
+      var pt = document.getElementById("ptime");
+      if(pt.value=="p01") {
+        document.getElementById("pti").value= "10.15 a.m.";
+      }
+      else if (pt.value=="p02") {
+        document.getElementById("pti").value= "01.15 p.m.";
+      }
+      else if (pt.value=="p03") {
+        document.getElementById("pti").value= "04.15 p.m.";
+      }
+      else if(pt.value=="p04") {
+        document.getElementById("pti").value= "07.15 p.m.";
+      }
+
+      var pt = document.getElementById("seat");
+      if(pt.value=="1") {
+        document.getElementById("sca").value= "Ground Floor";
+      }
+      else if (pt.value=="2") {
+        document.getElementById("sca").value= "Balcony 1st Floor";
+      }
+      else if (pt.value=="3") {
+        document.getElementById("sca").value= "Balcony 2nd Floor";
+      }
+
+      var sn = document.getElementById("snackers");
+      if(sn.value=="a") {
+        document.getElementById("psp").value= "Glendee Coconut Chips 40g";
+      }
+      else if (sn.value=="b") {
+        document.getElementById("psp").value= "Pringles Cheese 110g";
+      }
+      else if (sn.value=="c") {
+        document.getElementById("psp").value= "Pringles Sour Cream and Onion";
+      }
+      else if(sn.value=="d") {
+        document.getElementById("psp").value= "Pringles Potato Chips Original";
+      }
+      else if (sn.value=="e") {
+        document.getElementById("psp").value= "Pringles BBQ 110g";
+      }
+      else if (sn.value=="f") {
+        document.getElementById("psp").value= "Pringles Pizza 110g";
+      }
+      else if (sn.value=="g") {
+        document.getElementById("psp").value= "Pringles Hot and Spicy 110g";
+      }
+  }
+
+
+</script>
+ <!-- Smart Wizard -->
+                    <p>This is Sri Lankan online Movie Tickets booking System.</p>
+                    <hr>
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+                      <ul class="wizard_steps">
+                        <li>
+                          <a href="#step-1">
+                            <span class="step_no">1</span>
+                            <span class="step_descr">
+                                              Step 1<br />
+                                              <small>Registrations</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-2">
+                            <span class="step_no">2</span>
+                            <span class="step_descr">
+                                              Step 2<br />
+                                              <small>Pre-Orders</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-3">
+                            <span class="step_no">3</span>
+                            <span class="step_descr">
+                                              Step 3<br />
+                                              <small>Payments</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-4">
+                            <span class="step_no">4</span>
+                            <span class="step_descr">
+                                              Step 4<br />
+                                              <small>Confirmation</small>
+                                          </span>
+                          </a>
+                        </li>
+                      </ul>
+					<hr>
+
+                      <div id="step-1">
+                        <form class="form-horizontal form-label-left">
+
+                          <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Theatre Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="Tname">
+                            <option value="a01">Liberty Cinemas</option>
+                            <option value="a02">Savoy Cinema</option>
+                            <option value="a03">Lionel Wendt art gallery</option>
+                            <option value="a04">Elphinstone Theatre</option>
+                            <option value="a05">Majestic Cinema</option>
+                            <option value="a06">Regal Cinema</option>
+                          </select>
+                        </div>
+                      </div>
+
+                          <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Movie Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="Mname">
+                            <option value="b01">Pirates of the Caribbean</option>
+                            <option value="b02">Baywatch</option>
+                            <option value="b03">Half Girlfriend</option>
+                            <option value="b04">Baahubali 2 : The Conclusion</option>
+                            <option value="b05">Alien : Covenant</option>
+                          </select>
+   				<br>
+                          
+				<a href="" type="button" data-toggle="modal" data-target=".bs-example-modal-lg">You can show Movie Information of this week with click here or Movie Services under Home category in left side</a>
+                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel">Movie Details in this week</h4>
+                        </div>
+                        <div class="modal-body">
+
+                          <h4><b>Pirates of the Caribbean</b></h4> <hr>
+                          <div class="p1">
+                          <p> Thrust into an all-new adventure, a down-on-his-luck Capt. Jack Sparrow feels the winds of ill-fortune blowing </p> <p> even more strongly when deadly ghost sailors led by his old nemesis, the evil Capt. Salazar, escape from the </p> <p> Devil's Triangle. Jack's only hope of survival lies in seeking out the legendary… More </p>
+                          <div class="i1">
+                          <img src="images/1.jpg" width="180px" height="250px">
+                          </div>
+						<p>Initial release: May 24, 2017 (Italy)</p>
+						<p>Directors: Joachim Rønning, Espen Sandberg</p>
+						<p>Budget: 230 million USD</p>
+						<p>Music composed by: Geoff Zanelli</p>
+						<p>Producer: Jerry Bruckheimer  </p>
+                          </div>
+
+						<hr>
+                          <h4><b>Baywatch</b></h4> <hr>
+                          <div class="p2">
+                          <p>Lifeguard Mitch Buchannon (Dwayne Johnson) and a brash new recruit (Zac Efron) uncover a criminal plot that </p> <p> threatens the future of the bay.</p>
+                          <div class="i2">
+                          <img src="images/2.jpg" width="180px" height="250px">
+                          </div>
+						<p>Initial release: May 10, 2017 (Philippines)</p>
+						<p>Director: Seth Gordon</p>
+						<p>Budget: $69 million</p>
+						<p>Producers: Dwayne Johnson, Ivan Reitman, Beau Flynn, more</p>
+						<p>Production companies: Paramount Pictures, The Montecito Picture Company, Cold Spring Pictures</p>
+						<br>
+                        </div>
+
+						<hr>
+						<h4><b>Half Girlfriend</b></h4> <hr>
+						<div class="p3">
+						<p>Riya suggests a compromise to Madhav when she agrees to be his "half girlfriend."</p>
+						 <div class="i3">
+                          <img src="images/3.jpg" width="180px" height="250px">
+                          </div>
+						<p>Initial release: May 19, 2017 (India)</p>
+						<p>Director: Mohit Suri</p>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						</div>
+
+						<hr>
+						<h4><b>Baahubali 2 : The Conclusion</b></h4> <hr>
+						<div class="p4">
+						<p>Shiva, the son of Bahubali, begins to search for answers after he learns about his heritage.</p>
+						<div class="i4">
+                          <img src="images/4.jpg" width="180px" height="250px">
+                          </div>
+						<p>Initial release: April 27, 2017 (USA)</p>
+						<p>Budget: 2.5 billion INR</p>
+						<p>Did you know: "Baahubali 2: The Conclusion" is the highest-grossing Indian film worldwide. wikipedia.org</p>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						</div>
+
+						<hr>
+						<h4><b>Alien : Covenant</b></h4> <hr>
+						<div class="p5">
+						<p>Bound for a remote planet on the far side of the galaxy, members (Katherine Waterston, Billy Crudup) of the </p> <p> colony ship Covenant discover what they think to be an uncharted paradise. While there, they meet David </p> <p> (Michael Fassbender), the synthetic survivor of the doomed Prometheus expedition. The my… More</p>
+						<div class="i5">
+                          <img src="images/5.jpg" width="180px" height="250px">
+                          </div>
+						<p>Initial release: May 11, 2017 (Brazil)</p>
+						<p>Director: Ridley Scott</p>
+						<p>Music composed by: Jed Kurzel</p>
+						<p>Film series: Alien</p>
+						<p>Screenplay: John Logan, D.W. Harper</p>
+						</div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-round btn-primary" data-dismiss="modal"> &nbsp;&nbsp; Close &nbsp;&nbsp;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                            </div>
+
+                        </div>
+
+                           <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Particular Showtime</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="ptime">
+                            <option value="p01">10.15 a.m.</option>
+                            <option value="p02">01.15 p.m.</option>
+                            <option value="p03">04.15 p.m.</option>
+                            <option value="p04">07.15 p.m.</option>
+                          </select>
+                        </div>
+                        </div>
+
+                         <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Seats Category</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="seat" class="form-control"  onclick="calculate_seat_price(); total_seat_amounts()">
+                            <option disabled="disabled" selected="selected">Choose option</option>
+                            <option value="1">Ground Floor</option>
+                            <option value="2">Balcony 1st Floor</option>
+                            <option value="3">Balcony 2nd Floor</option>
+                          </select>
+                        </div>
+                        </div>
+
+
+                          <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Amount per one seat</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="one_seat" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+             
+                          <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Number of Seats <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" id="number1" required="required" data-validate-minmax="1,100" class="form-control col-md-7 col-xs-12" onkeyup="total_seat_amounts()">
+                        </div>
+                          </div>
+
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="total_seat_amount"  class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+ 						</form>
+
+                      </div>
+
+                      <div id="step-2">
+                       
+ 					<form class="form-horizontal form-label-left">
+					
+					 <div class="item form-group">
+                       <label for="" class="control-label col-md-3"></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <p align="center" id="new" name="new">  If you want to buy Pre-Orders, Please fill this form. Otherwise You can skip this page. If you want to skip this page, Please click next button below in this page.</p>
+                        </div>                     
+                      </div>
+					  <hr>
+	
+                          <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pre-Order Category</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="snackers" onclick="calculate_snack_price();total_snack_amounts()">
+                            <option disabled="disabled" selected="selected">Choose option</option>
+                            <option value="a">Glendee Coconut Chips 40g</option>
+                            <option value="b">Pringles Cheese 110g</option>
+                            <option value="c">Pringles Sour Cream and Onion</option>
+                            <option value="d">Pringles Potato Chips Original</option>
+                            <option value="e">Pringles BBQ 110g</option>
+                            <option value="f">Pringles Pizza 110g</option>
+                            <option value="g">Pringles Hot and Spicy 110g</option>
+                          </select>
+                          <br>
+
+ 			<!-- Small modal -->
+                  <a href="" data-toggle="modal" data-target=".bs-example-modal-sm">You can show the Pre-Orders Informations to click here or Pre-Order services under Home category in left side </a>
+
+                  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel2">Snacks List Special Price</h4>
+                        </div>
+                        <div class="modal-body">
+                           <h4><b>Glendee Coconut Chips 40g</b></h4> <hr>
+                          <img src="images/a.png" width="125px" height="160px"> 
+                          <p><s> Rs 275.00 </s></p>                                               
+                          <p>Special Price<h4 style="color:red"> <b> Rs 250.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles Cheese 110g</b></h4> <hr>
+                          <img src="images/b.png" width="125px" height="160px">  
+                          <p><s> Rs 420.00 </s></p>                                              
+                          <p>Special Price<h4 style="color:red"><b> Rs 347.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles Sour Cream and Onion</b></h4> <hr>
+                          <img src="images/c.png" width="125px" height="160px">
+                          <p><s> Rs 185.00 </s></p>                                                
+                          <p>Special Price<h4 style="color:red"><b> Rs 153.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles Potato Chips Original</b></h4> <hr>
+                          <img src="images/d.png" width="125px" height="160px">  
+                          <p><s> Rs 189.00 </s></p>                                              
+                          <p>Special Price<h4 style="color:red"><b> Rs 156.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles BBQ 110g</b></h4> <hr>
+                          <img src="images/e.png" width="125px" height="160px">  
+                          <p><s> Rs 426.00 </s></p>                                              
+                          <p>Special Price<h4 style="color:red"><b> Rs 352.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles Pizza 110g</b></h4> <hr>
+                          <img src="images/f.png" width="125px" height="160px">  
+                          <p><s> Rs 442.00 </s></p>                                              
+                          <p>Special Price<h4 style="color:red"><b> Rs 366.00 </b></h4></p>
+                          <hr>
+
+                           <h4><b>Pringles Hot & Spicy 110g</b></h4> <hr>
+                          <img src="images/g.png" width="125px" height="160px"> 
+                          <p><s> Rs 438.00 </s></p>                                               
+                          <p>Special Price<h4 style="color:red"><b> Rs 362.00 </b></h4></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-round btn-primary" data-dismiss="modal"> Close </button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /modals -->
+
+
+
+                        </div>
+                      </div>
+                         
+
+                               <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Price per Snack</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="price_snack" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+                         
+                          <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Number of Snacks<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" id="number2" required="required" data-validate-minmax="1,100" class="form-control col-md-7 col-xs-12" onkeyup="total_snack_amounts()">
+                        </div>
+                          </div>
+
+					 <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="total_snack_price" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+                        </form>
+
+                      </div>
+
+
+
+                      <div id="step-3">
+                       <form class="form-horizontal form-label-left">
+ 				
+
+ 					<div class="" role="tabpanel" data-example-id="togglable-tabs">
+                      <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true" onclick="Reset_mbill()">Credit Card Transactions</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false" onclick="Reset_credit()">Mobile Bill Transactions</a>
+                        </li>
+                        
+                      </ul>
+                      <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                         
+
+ 				<div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Card Holder's Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" id="h_name" required="required"  placeholder="card holder name"  class="form-control col-md-7 col-xs-12">
+                    </div>
+                  </div>
+
+
+                   <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Credit Card Number (Sampath Bank)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="c_no" class="form-control"  required="required"  data-inputmask="'mask' : '9999-9999-9999-9999'">
+                          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                      </div>
+
+                       <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">CVC Number</label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="password"  required="required"  id="cvc_no" class="form-control" data-inputmask="'mask' : '999'" placeholder="3 digit no. at the back of the credit card" onkeyup="t_amounts() ;p_amounts();total_price()">
+                    </div>
+                    </div>
+					
+					 <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Card Expiration</label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text"  required="required" id="yy-mm" class="form-control" data-inputmask="'mask' : '99-99'" placeholder="yy-mm">
+                    </div>
+                    </div>
+
+                   <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Theatre Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="t_amount"  class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+
+ 					<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pre-Order Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="p_amount" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+
+ 					<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="total_amount" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+				</form>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                         
+
+
+ 				<div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Customer Name<span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" id="c_name" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                  </div>
+
+
+                  <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Mobile Number (Dialog)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text"  required="required"  id="m_no" class="form-control" data-inputmask="'mask' : '999-9999999'">
+                          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                      </div>
+
+                       <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">PIN Number</label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="password"  required="required" id="p_no" class="form-control" data-inputmask="'mask' : '9999'" placeholder="4 digit PIN number"  onkeyup="tt_amounts() ;pp_amounts();totals_price()">
+                    </div>
+                    </div>
+
+                   <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Theatre Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="tt_amount" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+
+ 					<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pre-Order Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="pp_amount" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+
+ 					<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Amount</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="totals" class="form-control" readonly="readonly" placeholder="Read-Only">
+                        </div>
+                      </div>
+
+				</form>
+
+                        </div>
+                       
+                      </div>
+                    </div>
+
+                      </div>
+
+
+                      <div id="step-4">
+                        <h2 align="text-center"> Thank You !</h2>
+                        <p>Purchased, All Transactions are done correctly. 
+                        </p>
+                          
+<hr>        
+
+
+                        <!-- attach new -->
+<button  class="btn btn-round btn-warning" onclick="ane()">View All Payment Script</button>
+                  <div class="x_content">
+
+
+<script language="JavaScript">
+
+function dosubmit()
+{
+  document.myform.action = "production/payment.html?" + document.myform.misc.value + "?" + document.myform.misc1.value  + "?" + document.myform.misc2.value  + "?" + document.myform.misc3.value  + "?" + document.myform.misc4.value  + "?" + document.myform.misc5.value  + "?" + document.myform.misc6.value  + "?" + document.myform.misc7.value  + "?" + document.myform.misc8.value  + "?" + document.myform.misc9.value  + "?" + document.myform.misc10.value  + "?" + document.myform.misc11.value;
+  window.event.returnValue = true;
+}
+
+</script>
+
+
+                    <form class="form-horizontal form-label-left"  name="myform" method="POST" action="" onsubmit="dosubmit()">
+         
+                       <div id="uu">
+            <span align="center" class="section"  style="font-family:roman; font-size:36px">PAYMENT TRANSACTIONS</span>
+
+            <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Theatre Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="nbill1"  name="misc7" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+
+            <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Movie Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="na1"  name="misc8" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+
+             <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Movie Show Time</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="pti"  name="misc9" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+
+              <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Seats Category</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="sca"  name="misc10" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+            
+            <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Amount per one seat</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="bill1"  name="misc" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+            
+            <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Number of seats you booked</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="bill2" name="misc1" type="text"  class="form-control col-md-7 col-xs-12" readonly="readonly">
+                        </div>
+                      </div>
+          
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Total Amount for Theatre <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="bill3" name="misc2" readonly="readonly" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+              <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Pre-Order snack category</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="psp"  name="misc11" type="text"  class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+                      
+                       <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Amount per snack</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input  id="bill4" name="misc3" type="text" class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+            
+            <div class="item form-group">
+                        <label for="password" class="control-label col-md-3">Number of snacks you ordered</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="bill5" name="misc4" type="text" class="form-control col-md-7 col-xs-12"  readonly="readonly">
+                        </div>
+                      </div>
+          
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Total Amount for Snacks <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="bill6" name="misc5" readonly="readonly" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+<hr>
+                <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"> <h1  style="font-family:roman; font-size:36px"> Total </h1><span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <h1><input  style="font-size: :36px;" type="text" id="bill7" name="misc6" readonly="readonly" class="form-control col-md-7 col-xs-12"></h1>
+                        </div>
+                      </div>
+                      
+
+
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                        <p align="center" class="section"> Do you want to get payment transaction script for your email address? If you want to get it, please click this button </p>
+                     
+                          <button id="send" type="submit" class="btn btn-round btn-success">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Generate Invoice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button>
+                        </div>
+                      </div>
+            <br>
+            </div>
+
+            
+                    </form>
+
+                    </div>
+                        <!-- end attach new -->
+
+                      
+                      </div>
+
+                    </div>
+                    <!-- End SmartWizard Content -->
+					
+					 <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script> 
+        <!-- validator -->
+    <script src="vendors/validator/validator.js"></script>
+    <!-- jquery.inputmask -->
+    <script src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+	
